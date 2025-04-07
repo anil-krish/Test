@@ -14,11 +14,6 @@ app.get('/', (req, res) => {
     res.render('index', {sendData:sendData});
 });
 
-app.get('/api/countries', (req, res) => {
-    const countries = details.Country.getAllCountries();
-    //console.log(countries);
-    res.json(countries);
-});
 app.get('/api/states', (req, res) => {
     const countryCode = req.query.countryCode;
     const states = details.State.getStatesOfCountry(countryCode);
